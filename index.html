@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pixelboreal — bilingual web studio | studio web bilingue</title>
+<meta name="description" content="Bilingual web studio in Montréal. Fast hand-built websites in English and Québec French (fr-CA), bug fixes at flat prices, and real fr-CA localization.">
+<style>
+:root{
+  --sky:#0E1726; --panel:#162338; --line:#2E405C;
+  --mint:#3FE0A6; --cyan:#46C8F0; --purple:#8B6FE8; --spruce:#26845C;
+  --snow:#E9F2FA; --soft:#BCCBDE; --ink:#F0F7FF;
+  --shadow:rgba(0,0,0,.35);
+}
+[data-theme="light"]{
+  --sky:#F2F7FC; --panel:#FFFFFF; --line:#C9D8E8;
+  --mint:#0B8A5F; --cyan:#0E7FA8; --purple:#6A4FD0; --spruce:#26845C;
+  --snow:#10243C; --soft:#3D5570; --ink:#10243C;
+  --shadow:rgba(30,60,90,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{
+  background:var(--sky); color:var(--ink);
+  font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height:1.6; font-size:17px;
+}
+a{color:var(--cyan)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 0;gap:12px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{border-radius:8px}
+.brand b{font-family:Consolas,ui-monospace,monospace;font-size:1.25rem;letter-spacing:.5px}
+.controls{display:flex;gap:8px}
+.controls button{
+  background:var(--panel);color:var(--ink);border:2px solid var(--line);
+  border-radius:8px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer;
+}
+.controls button:hover{border-color:var(--mint)}
+.controls button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.hero{padding:64px 0 40px;position:relative}
+.hero h1{font-size:clamp(1.9rem,4.5vw,3.1rem);line-height:1.15;max-width:21ch}
+.hero h1 .hl{color:var(--mint)}
+.hero p.lead{max-width:60ch;margin:20px 0 28px;color:var(--soft);font-size:1.12rem}
+.cta{display:inline-block;background:var(--mint);color:#06251A;font-weight:700;
+  padding:13px 26px;border-radius:10px;text-decoration:none}
+[data-theme="light"] .cta{color:#fff}
+.cta.ghost{background:transparent;color:var(--mint);border:2px solid var(--mint);margin-left:10px}
+.pixels{display:flex;gap:6px;margin-bottom:26px}
+.pixels span{width:14px;height:14px;border-radius:3px;display:inline-block}
+section{padding:44px 0}
+h2{font-size:1.65rem;margin-bottom:8px}
+.sub{color:var(--soft);margin-bottom:28px;max-width:65ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{
+  background:var(--panel);border:2px solid var(--line);border-radius:14px;
+  padding:26px;display:flex;flex-direction:column;gap:10px;
+  box-shadow:0 6px 24px var(--shadow);
+}
+.card h3{font-size:1.2rem}
+.card .tag{font-family:Consolas,ui-monospace,monospace;font-size:.85rem;color:var(--cyan)}
+.card p{color:var(--soft);font-size:.98rem;flex:1}
+.card a.go{font-weight:600;text-decoration:none}
+.card a.go:hover{text-decoration:underline}
+.feature{
+  background:var(--panel);border:2px solid var(--line);border-radius:14px;
+  padding:32px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+  box-shadow:0 6px 24px var(--shadow);
+}
+.feature ul{list-style:none;margin-top:14px}
+.feature li{padding-left:26px;position:relative;margin-bottom:8px;color:var(--soft)}
+.feature li::before{content:"■";position:absolute;left:0;color:var(--mint);font-size:.7rem;top:5px}
+.mock{
+  border:2px solid var(--line);border-radius:18px;padding:14px 12px;background:var(--sky);
+  max-width:250px;margin:0 auto;box-shadow:0 10px 30px var(--shadow);
+}
+.mock .bar{height:10px;border-radius:5px;background:var(--line);margin:8px 6px}
+.mock .bar.b1{width:70%;background:var(--mint)}
+.mock .bar.b2{width:88%}
+.mock .bar.b3{width:55%;background:var(--purple)}
+.mock .bar.b4{width:75%}
+.mock .bar.b5{width:40%;background:var(--cyan)}
+.mock .dot-row{display:flex;gap:6px;margin:12px 6px 4px}
+.mock .dot-row i{width:22px;height:22px;border-radius:6px;background:var(--panel);border:2px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:step}
+.step{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:24px}
+.step::before{
+  counter-increment:step;content:counter(step);
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:9px;background:var(--mint);color:#06251A;
+  font-weight:800;margin-bottom:12px;
+}
+[data-theme="light"] .step::before{color:#fff}
+.step p{color:var(--soft);font-size:.97rem}
+.forest{display:flex;gap:4px;align-items:flex-end;justify-content:center;margin:40px 0 0;opacity:.9}
+.tree{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:34px solid var(--spruce)}
+.tree.t2{border-bottom-width:46px;border-left-width:18px;border-right-width:18px}
+.tree.t3{border-bottom-width:26px;border-left-width:11px;border-right-width:11px}
+footer{border-top:2px solid var(--line);margin-top:20px;padding:34px 0 46px;color:var(--soft);font-size:.95rem}
+footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.badgeline{margin-top:10px;font-family:Consolas,ui-monospace,monospace;font-size:.85rem}
+.badgeline b{color:var(--mint)}
+@media (max-width:760px){ .feature{grid-template-columns:1fr} .cta.ghost{margin-left:0;margin-top:10px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="brand" href="#" aria-label="pixelboreal home">
+    <svg width="44" height="44" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="pixelboreal logo: pixel aurora over a spruce tree">
+      <rect width="16" height="16" fill="#0E1726"/>
+      <g>
+        <rect x="3" y="0" width="1" height="1" fill="#FFFFFF"/>
+        <rect x="1" y="1" width="5" height="1" fill="#3FE0A6"/><rect x="10" y="1" width="5" height="1" fill="#46C8F0"/>
+        <rect x="2" y="2" width="1" height="1" fill="#28A076"/><rect x="3" y="2" width="4" height="1" fill="#3FE0A6"/>
+        <rect x="11" y="2" width="4" height="1" fill="#46C8F0"/><rect x="15" y="2" width="1" height="1" fill="#28A076"/>
+        <rect x="5" y="3" width="5" height="1" fill="#8B6FE8"/>
+        <rect x="12" y="4" width="1" height="1" fill="#FFFFFF"/>
+        <rect x="7" y="5" width="2" height="1" fill="#26845C"/>
+        <rect x="6" y="6" width="4" height="1" fill="#26845C"/>
+        <rect x="5" y="7" width="6" height="1" fill="#26845C"/>
+        <rect x="2" y="8" width="2" height="1" fill="#26845C"/><rect x="6" y="8" width="4" height="1" fill="#26845C"/><rect x="12" y="8" width="2" height="1" fill="#26845C"/>
+        <rect x="1" y="9" width="4" height="1" fill="#26845C"/><rect x="6" y="9" width="4" height="1" fill="#26845C"/><rect x="11" y="9" width="4" height="1" fill="#26845C"/>
+        <rect x="2" y="10" width="1" height="1" fill="#26845C"/><rect x="4" y="10" width="8" height="1" fill="#26845C"/><rect x="13" y="10" width="1" height="1" fill="#26845C"/>
+        <rect x="7" y="11" width="2" height="1" fill="#123A2C"/>
+        <rect x="0" y="12" width="16" height="4" fill="#E9F2FA"/>
+      </g>
+    </svg>
+    <b>pixelboreal</b>
+  </a>
+  <div class="controls">
+    <button id="langBtn" aria-label="Passer au français">FR</button>
+    <button id="themeBtn" aria-label="Switch theme">☀</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="pixels" aria-hidden="true">
+    <span style="background:var(--mint)"></span><span style="background:var(--cyan)"></span>
+    <span style="background:var(--purple)"></span><span style="background:var(--spruce)"></span>
+  </div>
+  <h1 data-i18n="h1"></h1>
+  <p class="lead" data-i18n="lead"></p>
+  <a class="cta" href="https://www.fiverr.com/awouleh" rel="noopener" data-i18n="cta1"></a>
+  <a class="cta ghost" href="#work" data-i18n="cta2"></a>
+</section>
+
+<section id="services">
+  <h2 data-i18n="s_h"></h2>
+  <p class="sub" data-i18n="s_sub"></p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag" data-i18n="c1_tag"></span>
+      <h3 data-i18n="c1_h"></h3>
+      <p data-i18n="c1_p"></p>
+      <a class="go" href="https://www.fiverr.com/awouleh/fix-bugs-on-your-website-fast-at-a-flat-price" rel="noopener" data-i18n="c_go"></a>
+    </div>
+    <div class="card">
+      <span class="tag" data-i18n="c2_tag"></span>
+      <h3 data-i18n="c2_h"></h3>
+      <p data-i18n="c2_p"></p>
+      <a class="go" href="https://www.fiverr.com/awouleh/build-a-fast-bilingual-website-in-english-and-french" rel="noopener" data-i18n="c_go"></a>
+    </div>
+    <div class="card">
+      <span class="tag" data-i18n="c3_tag"></span>
+      <h3 data-i18n="c3_h"></h3>
+      <p data-i18n="c3_p"></p>
+      <a class="go" href="https://www.fiverr.com/awouleh/localize-your-website-into-real-quebec-french-fr-ca" rel="noopener" data-i18n="c_go"></a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <h2 data-i18n="w_h"></h2>
+  <p class="sub" data-i18n="w_sub"></p>
+  <div class="feature">
+    <div>
+      <h3>Perch</h3>
+      <p class="sub" style="margin-bottom:0" data-i18n="w_p"></p>
+      <ul>
+        <li data-i18n="w_l1"></li>
+        <li data-i18n="w_l2"></li>
+        <li data-i18n="w_l3"></li>
+        <li data-i18n="w_l4"></li>
+      </ul>
+      <p style="margin-top:18px"><a class="cta" href="https://fct4r8jk6f-cmyk.github.io/perchapp/" rel="noopener" data-i18n="w_go"></a></p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+      <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
+      <div class="bar b4"></div><div class="bar b5"></div>
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2 data-i18n="p_h"></h2>
+  <p class="sub" data-i18n="p_sub"></p>
+  <div class="steps">
+    <div class="step"><h3 data-i18n="p1_h"></h3><p data-i18n="p1_p"></p></div>
+    <div class="step"><h3 data-i18n="p2_h"></h3><p data-i18n="p2_p"></p></div>
+    <div class="step"><h3 data-i18n="p3_h"></h3><p data-i18n="p3_p"></p></div>
+  </div>
+  <div class="forest" aria-hidden="true">
+    <div class="tree t3"></div><div class="tree"></div><div class="tree t2"></div><div class="tree"></div><div class="tree t3"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="frow">
+    <div>
+      <b style="font-family:Consolas,monospace">pixelboreal</b> · Montréal
+      <div class="badgeline"><b>■</b> <span data-i18n="f_line"></span></div>
+    </div>
+    <div>
+      <a href="https://www.fiverr.com/awouleh" rel="noopener" data-i18n="f_fiverr"></a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+const I18N = {
+  en: {
+    h1: 'Fast, hand-built websites in <span class="hl">English and Québec French</span>.',
+    lead: 'A bilingual web studio. No bloated page builders, no machine translation — clean code that loads instantly and French that sounds like Quebec, because it is.',
+    cta1: 'Hire me on Fiverr', cta2: 'See my work',
+    s_h: 'Services', s_sub: 'Three fixed-price services, delivered async — no meetings, clear written scope, in English or in French.',
+    c1_tag: 'from $60 · 2 days', c1_h: 'Website bug fixes',
+    c1_p: 'A layout that breaks on mobile, a form that will not submit, accents displaying wrong in French? Send the link — I diagnose it, fix it, and explain the cause in plain words.',
+    c2_tag: 'from $150 · 4 days', c2_h: 'Bilingual websites',
+    c2_p: 'Landing pages, small business sites and web apps that speak both of Canada’s languages properly, with free hosting setup and basic SEO in both languages.',
+    c3_tag: 'from $120 · 3 days', c3_h: 'fr-CA localization',
+    c3_p: '"French" is not enough for Quebec. I translate your site into natural Québécois French — including the buttons, error messages and SEO strings translators never touch.',
+    c_go: 'View on Fiverr →',
+    w_h: 'Featured work', w_sub: 'Real product, real code — built entirely by this studio.',
+    w_p: 'A friend-making app demo: 29 screens in a single dependency-free page, fully bilingual (en / fr-CA), with dark & light themes, real accessibility settings and a PostgreSQL backend.',
+    w_l1: '29 screens, one HTML file, no build step',
+    w_l2: 'Full English + Québec French coverage, legal pages included',
+    w_l3: 'Functional accessibility: text size, contrast, reduced motion',
+    w_l4: 'Supabase / PostgreSQL backend with realtime chat',
+    w_go: 'Open the live demo',
+    p_h: 'How it works', p_sub: 'Async and fixed-price from the first message to the last file.',
+    p1_h: 'Tell me what you need', p1_p: 'Send your URL or your idea in a couple of lines — English or French. Bullet points are fine; I can draft the copy.',
+    p2_h: 'Get a fixed quote', p2_p: 'Exact price and delivery date in writing before any work starts. Anything outside the scope is a separate quote — never surprise costs.',
+    p3_h: 'Receive, review, done', p3_p: 'You get the work plus a plain-language summary of what was done. Revisions included; everything tested on desktop and mobile.',
+    f_line: 'single-file · bilingual · no build step — like everything I ship',
+    f_fiverr: 'Fiverr profile →'
+  },
+  fr: {
+    h1: 'Des sites web rapides, faits main, <span class="hl">en français québécois et en anglais</span>.',
+    lead: 'Un studio web bilingue. Pas de constructeur de pages gonflé, pas de traduction machine — du code propre qui charge instantanément et du français qui sonne comme le Québec, parce que c’en est.',
+    cta1: 'Engagez-moi sur Fiverr', cta2: 'Voir mes réalisations',
+    s_h: 'Services', s_sub: 'Trois services à prix fixe, livrés en asynchrone — pas de réunions, un mandat écrit clair, en français ou en anglais.',
+    c1_tag: 'dès 60 $ · 2 jours', c1_h: 'Correction de bogues web',
+    c1_p: 'Une mise en page qui brise sur mobile, un formulaire qui ne s’envoie pas, des accents mal affichés? Envoyez le lien — je diagnostique, je corrige et j’explique la cause simplement.',
+    c2_tag: 'dès 150 $ · 4 jours', c2_h: 'Sites web bilingues',
+    c2_p: 'Pages d’atterrissage, sites de PME et applications web qui parlent les deux langues du Canada comme il faut, avec hébergement gratuit et SEO de base dans les deux langues.',
+    c3_tag: 'dès 120 $ · 3 jours', c3_h: 'Localisation fr-CA',
+    c3_p: 'Le « français de France », ça se remarque. Je traduis votre site en français québécois naturel — boutons, messages d’erreur et textes SEO inclus.',
+    c_go: 'Voir sur Fiverr →',
+    w_h: 'Réalisation vedette', w_sub: 'Un vrai produit, du vrai code — entièrement construit par ce studio.',
+    w_p: 'Démo d’une app de rencontres amicales : 29 écrans dans une seule page sans dépendances, entièrement bilingue (fr-CA / en), avec thèmes sombre et clair, vrais réglages d’accessibilité et backend PostgreSQL.',
+    w_l1: '29 écrans, un seul fichier HTML, aucune étape de build',
+    w_l2: 'Couverture complète français québécois + anglais, pages légales incluses',
+    w_l3: 'Accessibilité fonctionnelle : taille du texte, contraste, mouvement réduit',
+    w_l4: 'Backend Supabase / PostgreSQL avec clavardage en temps réel',
+    w_go: 'Ouvrir la démo',
+    p_h: 'Comment ça marche', p_sub: 'Asynchrone et à prix fixe, du premier message au dernier fichier.',
+    p1_h: 'Dites-moi ce qu’il vous faut', p1_p: 'Envoyez votre adresse web ou votre idée en quelques lignes — en français ou en anglais. Des points de forme suffisent; je peux rédiger les textes.',
+    p2_h: 'Recevez une soumission fixe', p2_p: 'Prix exact et date de livraison par écrit avant de commencer. Tout ce qui dépasse le mandat fait l’objet d’une soumission séparée — jamais de frais surprises.',
+    p3_h: 'Recevez, révisez, terminé', p3_p: 'Vous recevez le travail plus un résumé en mots simples. Révisions incluses; tout est testé sur ordinateur et mobile.',
+    f_line: 'un seul fichier · bilingue · sans build — comme tout ce que je livre',
+    f_fiverr: 'Profil Fiverr →'
+  }
+};
+
+let lang = localStorage.getItem('pb_lang') || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'en');
+let theme = localStorage.getItem('pb_theme') || 'dark';
+
+function applyLang(){
+  document.documentElement.lang = lang === 'fr' ? 'fr-CA' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (I18N[lang][k] !== undefined) el.innerHTML = I18N[lang][k];
+  });
+  const b = document.getElementById('langBtn');
+  b.textContent = lang === 'fr' ? 'EN' : 'FR';
+  b.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer au français');
+  document.title = lang === 'fr' ? 'pixelboreal — studio web bilingue' : 'pixelboreal — bilingual web studio';
+}
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeBtn').textContent = theme === 'dark' ? '☀' : '☾';
+}
+document.getElementById('langBtn').addEventListener('click', () => {
+  lang = lang === 'fr' ? 'en' : 'fr'; localStorage.setItem('pb_lang', lang); applyLang();
+});
+document.getElementById('themeBtn').addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('pb_theme', theme); applyTheme();
+});
+applyLang(); applyTheme();
+</script>
+</body>
+</html>
