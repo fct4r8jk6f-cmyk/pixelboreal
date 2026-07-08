@@ -6,8 +6,7 @@
 <title>pixelboreal — bilingual web studio | studio web bilingue</title>
 <meta name="description" content="Bilingual web studio in Montréal. Fast hand-built websites in English and Québec French (fr-CA), bug fixes at flat prices, and real fr-CA localization.">
 <link rel="canonical" href="https://fct4r8jk6f-cmyk.github.io/pixelboreal/">
-<meta name="theme-color" content="#0E1726" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F2F7FC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1726" id="tcMeta">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="pixelboreal">
 <meta property="og:title" content="pixelboreal — bilingual web studio | studio web bilingue">
@@ -15,9 +14,15 @@
 <meta property="og:url" content="https://fct4r8jk6f-cmyk.github.io/pixelboreal/">
 <meta property="og:locale" content="en_CA">
 <meta property="og:locale:alternate" content="fr_CA">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://fct4r8jk6f-cmyk.github.io/pixelboreal/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="pixelboreal — bilingual web studio. Websites, bug fixes, and real Québec French localization.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="pixelboreal — bilingual web studio | studio web bilingue">
 <meta name="twitter:description" content="Fast hand-built websites in English and Québec French (fr-CA), bug fixes at flat prices, and real fr-CA localization. One file, loads instantly.">
+<meta name="twitter:image" content="https://fct4r8jk6f-cmyk.github.io/pixelboreal/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230E1726'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23FFFFFF'/%3E%3Crect x='1' y='1' width='5' height='1' fill='%233FE0A6'/%3E%3Crect x='10' y='1' width='5' height='1' fill='%2346C8F0'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%2328A076'/%3E%3Crect x='3' y='2' width='4' height='1' fill='%233FE0A6'/%3E%3Crect x='11' y='2' width='4' height='1' fill='%2346C8F0'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%2328A076'/%3E%3Crect x='5' y='3' width='5' height='1' fill='%238B6FE8'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%23FFFFFF'/%3E%3Crect x='7' y='5' width='2' height='1' fill='%2326845C'/%3E%3Crect x='6' y='6' width='4' height='1' fill='%2326845C'/%3E%3Crect x='5' y='7' width='6' height='1' fill='%2326845C'/%3E%3Crect x='2' y='8' width='2' height='1' fill='%2326845C'/%3E%3Crect x='6' y='8' width='4' height='1' fill='%2326845C'/%3E%3Crect x='12' y='8' width='2' height='1' fill='%2326845C'/%3E%3Crect x='1' y='9' width='4' height='1' fill='%2326845C'/%3E%3Crect x='6' y='9' width='4' height='1' fill='%2326845C'/%3E%3Crect x='11' y='9' width='4' height='1' fill='%2326845C'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%2326845C'/%3E%3Crect x='4' y='10' width='8' height='1' fill='%2326845C'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%2326845C'/%3E%3Crect x='7' y='11' width='2' height='1' fill='%23123A2C'/%3E%3Crect x='0' y='12' width='16' height='4' fill='%23E9F2FA'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
@@ -27,6 +32,7 @@
   "url": "https://fct4r8jk6f-cmyk.github.io/pixelboreal/",
   "description": "Bilingual web studio in Montréal. Fast hand-built websites in English and Québec French (fr-CA), bug fixes at flat prices, and real fr-CA localization.",
   "areaServed": { "@type": "City", "name": "Montréal" },
+  "priceRange": "$60–$850",
   "availableLanguage": ["en", "fr-CA"],
   "makesOffer": [
     { "@type": "Offer", "priceCurrency": "USD", "price": "60", "itemOffered": { "@type": "Service", "name": "Website bug fixes" } },
@@ -41,6 +47,8 @@
 try {
   var t = localStorage.getItem('pb_theme');
   if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  var tc = document.getElementById('tcMeta');
+  if (tc) tc.setAttribute('content', document.documentElement.getAttribute('data-theme') === 'light' ? '#F2F7FC' : '#0E1726');
   var l = localStorage.getItem('pb_lang');
   if (l === 'fr' || (!l && navigator.language && navigator.language.indexOf('fr') === 0)) {
     document.documentElement.lang = 'fr-CA';
@@ -89,7 +97,7 @@ header{
 .brand b{font-family:Consolas,ui-monospace,monospace;font-size:1.25rem;letter-spacing:.5px}
 .controls{display:flex;gap:8px}
 .controls button{
-  background:var(--panel);color:var(--ink);border:2px solid var(--line);
+  background:var(--panel);color:var(--ink);border:2px solid var(--soft);
   border-radius:8px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer;
   min-height:44px;min-width:44px;
 }
@@ -164,6 +172,14 @@ footer{border-top:2px solid var(--line);margin-top:20px;padding:34px 0 46px;colo
 footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .badgeline{margin-top:10px;font-family:Consolas,ui-monospace,monospace;font-size:.85rem}
 .badgeline b{color:var(--mint)}
+.faq{display:flex;flex-direction:column;gap:12px}
+.faq details{background:var(--panel);border:2px solid var(--line);border-radius:12px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:600;font-size:1.02rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--mint);font-size:1.5rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq summary:focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:8px}
+.faq details p{padding:0 22px 20px;color:var(--soft);font-size:.98rem;max-width:70ch}
 @media (max-width:760px){ .feature{grid-template-columns:1fr} .cta.ghost{margin-left:0;margin-top:10px} }
 @media (max-width:400px){ .wrap{padding:0 16px} }
 </style>
@@ -277,6 +293,33 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="faq">
+  <h2 data-i18n="faq_h">Common questions</h2>
+  <p class="sub" data-i18n="faq_sub">The things people usually ask before they order.</p>
+  <div class="faq">
+    <details>
+      <summary data-i18n="faq_q1">Who will I be working with?</summary>
+      <p data-i18n="faq_a1">You work directly with the developer who builds your site, from the first message to final delivery. No account managers, no handoffs, and no calls to schedule unless you want one.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq_q2">How do payment and revisions work?</summary>
+      <p data-i18n="faq_a2">Everything goes through Fiverr, so payment is handled on their platform with buyer protection. You get a fixed price and a delivery date in writing before I start, and revisions are included in every package. If something isn’t right, tell me and I’ll fix it.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq_q3">How fast can you deliver?</summary>
+      <p data-i18n="faq_a3">Most jobs are done in two to four days, depending on the package, and you’ll see the exact date before you order. Need it sooner? Ask first and I’ll tell you honestly whether a rush is doable.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq_q4">Can I update the site myself later?</summary>
+      <p data-i18n="faq_a4">Yes. Everything ships as clean, hand-written code in a single file, with no framework and no build step to learn. You can open it, edit the text yourself, or hand it to any developer down the road. You’re never locked in.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq_q5">Is the French really Québécois, or machine-translated?</summary>
+      <p data-i18n="faq_a5">I write it myself, in real Québec French, never a machine pass. That includes the parts most translators skip: buttons, error messages and SEO text. Want proof? Ask and I’ll show you examples.</p>
+    </details>
+  </div>
+</section>
+
 <section id="start">
   <div class="closing">
     <h2 data-i18n="close_h">Ready when you are.</h2>
@@ -290,7 +333,7 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="frow">
     <div>
       <b style="font-family:Consolas,monospace">pixelboreal</b> · Montréal
-      <div class="badgeline"><b>■</b> <span data-i18n="f_line">single-file · bilingual · no build step · like everything I ship</span></div>
+      <div class="badgeline"><b aria-hidden="true">■</b> <span data-i18n="f_line">single-file · bilingual · no build step · like everything I ship</span></div>
     </div>
     <div>
       <a href="https://www.fiverr.com/awouleh" target="_blank" rel="noopener noreferrer" data-i18n="f_fiverr">Fiverr profile <span aria-hidden="true">→</span></a>
@@ -326,6 +369,17 @@ const I18N = {
     p1_h: 'Tell me what you need', p1_p: 'Send your URL or your idea in a couple of lines, in English or French. Rough notes are fine, and I can write the copy for you.',
     p2_h: 'Get a fixed quote', p2_p: 'You get an exact price and delivery date in writing before any work starts. Anything outside that scope is a separate quote, so the cost never surprises you.',
     p3_h: 'Receive, review, done', p3_p: 'You get the work plus a plain summary of what was done. Revisions are included, and everything is tested on desktop and mobile.',
+    faq_h: 'Common questions', faq_sub: 'The things people usually ask before they order.',
+    faq_q1: 'Who will I be working with?',
+    faq_a1: 'You work directly with the developer who builds your site, from the first message to final delivery. No account managers, no handoffs, and no calls to schedule unless you want one.',
+    faq_q2: 'How do payment and revisions work?',
+    faq_a2: 'Everything goes through Fiverr, so payment is handled on their platform with buyer protection. You get a fixed price and a delivery date in writing before I start, and revisions are included in every package. If something isn’t right, tell me and I’ll fix it.',
+    faq_q3: 'How fast can you deliver?',
+    faq_a3: 'Most jobs are done in two to four days, depending on the package, and you’ll see the exact date before you order. Need it sooner? Ask first and I’ll tell you honestly whether a rush is doable.',
+    faq_q4: 'Can I update the site myself later?',
+    faq_a4: 'Yes. Everything ships as clean, hand-written code in a single file, with no framework and no build step to learn. You can open it, edit the text yourself, or hand it to any developer down the road. You’re never locked in.',
+    faq_q5: 'Is the French really Québécois, or machine-translated?',
+    faq_a5: 'I write it myself, in real Québec French, never a machine pass. That includes the parts most translators skip: buttons, error messages and SEO text. Want proof? Ask and I’ll show you examples.',
     close_h: 'Ready when you are.',
     close_p: 'Send a link or a couple of lines, in English or French. You’ll have a fixed price and a delivery date before any work starts.',
     close_cta: 'Start on Fiverr',
@@ -335,15 +389,15 @@ const I18N = {
   fr: {
     skip: 'Aller au contenu',
     h1: 'Des sites web rapides, faits main, <span class="hl">en français québécois et en anglais</span>.',
-    lead: 'Un studio web bilingue qui bâtit, corrige et localise des sites web. Tout est codé à la main plutôt que monté dans un constructeur de pages, donc ça charge vite et le français sonne comme le Québec au lieu d’une traduction.',
+    lead: 'Un studio web bilingue qui bâtit, corrige et localise des sites web. Tout est codé à la main plutôt que monté dans un constructeur de pages, donc ça charge vite et le français sonne d’ici, pas comme une traduction.',
     hero_trust: 'Prix fixe par écrit · révisions incluses · aucun coût imprévu',
     cta1: 'Engagez-moi sur Fiverr', cta2: 'Voir mes réalisations',
     s_h: 'Services', s_sub: 'Trois services à prix fixe, tout en asynchrone. Pas de réunions à planifier, le mandat est écrit d’avance, et on travaille en français ou en anglais.',
-    c1_tag: 'dès 60 $ · 2 jours', c1_h: 'Correction de bogues web',
+    c1_tag: 'dès 60&#8239;$ · 2 jours', c1_h: 'Correction de bogues web',
     c1_p: 'Une mise en page qui déraille sur mobile, un formulaire qui ne s’envoie pas, des accents mal affichés&#8239;? Envoyez-moi le lien. Je trouve la cause, je corrige et je vous explique simplement ce qui s’est passé.',
-    c2_tag: 'dès 150 $ · 4 jours', c2_h: 'Sites web bilingues',
+    c2_tag: 'dès 150&#8239;$ · 4 jours', c2_h: 'Sites web bilingues',
     c2_p: 'Pages d’atterrissage, sites de PME et applications web qui parlent les deux langues du Canada comme il faut, avec hébergement gratuit et référencement (SEO) de base dans les deux langues.',
-    c3_tag: 'dès 120 $ · 3 jours', c3_h: 'Localisation fr-CA',
+    c3_tag: 'dès 120&#8239;$ · 3 jours', c3_h: 'Localisation fr-CA',
     c3_p: 'Le «&#8239;français de France&#8239;», ça se remarque tout de suite. Je traduis votre site en français québécois naturel, boutons, messages d’erreur et textes de référencement compris.',
     c_go: 'Voir sur Fiverr <span aria-hidden="true">→</span>',
     w_h: 'Réalisation vedette', w_sub: 'Un vrai produit, du vrai code. Je l’ai conçu au complet moi-même.',
@@ -357,6 +411,17 @@ const I18N = {
     p1_h: 'Dites-moi ce qu’il vous faut', p1_p: 'Envoyez votre adresse web ou votre idée en quelques lignes, en français ou en anglais. Des notes en vrac suffisent, et je peux rédiger les textes pour vous.',
     p2_h: 'Recevez une soumission fixe', p2_p: 'Vous avez un prix exact et une date de livraison par écrit avant de commencer. Tout ce qui dépasse le mandat fait l’objet d’une soumission séparée, donc le coût ne vous surprend jamais.',
     p3_h: 'Recevez, révisez, terminé', p3_p: 'Vous recevez le travail avec un résumé en mots simples. Les révisions sont incluses, et tout est testé sur ordinateur et sur mobile.',
+    faq_h: 'Questions fréquentes', faq_sub: 'Ce que les gens demandent souvent avant de commander.',
+    faq_q1: 'Avec qui je fais affaire&#8239;?',
+    faq_a1: 'Vous travaillez directement avec la personne qui bâtit votre site, du premier message à la livraison finale. Pas de gestionnaire de compte, pas de transfert d’un service à l’autre, et aucun appel à planifier, sauf si vous en voulez un.',
+    faq_q2: 'Comment fonctionnent le paiement et les révisions&#8239;?',
+    faq_a2: 'Tout passe par Fiverr, donc le paiement se fait sur leur plateforme, avec protection de l’acheteur. Vous avez un prix fixe et une date de livraison par écrit avant que je commence, et les révisions sont incluses dans chaque forfait. Si quelque chose cloche, dites-le-moi et je corrige.',
+    faq_q3: 'En combien de temps c’est livré&#8239;?',
+    faq_a3: 'La plupart des mandats sont livrés en deux à quatre jours, selon le forfait, et vous voyez la date exacte avant de commander. Ça presse&#8239;? Demandez-moi d’abord et je vous dirai honnêtement si un travail accéléré est possible.',
+    faq_q4: 'Est-ce que je peux modifier le site moi-même plus tard&#8239;?',
+    faq_a4: 'Oui. Tout est livré en code propre, écrit à la main, dans un seul fichier&#8239;: aucun cadriciel ni étape de build à apprendre. Vous pouvez l’ouvrir, changer les textes vous-même ou le confier à n’importe quel développeur plus tard. Vous n’êtes jamais pris au piège.',
+    faq_q5: 'Le français est-il vraiment québécois ou traduit par machine&#8239;?',
+    faq_a5: 'Je l’écris moi-même, en vrai français québécois, jamais avec une traduction automatique. Ça comprend les parties que la plupart des traducteurs sautent&#8239;: boutons, messages d’erreur et textes de référencement. Vous voulez une preuve&#8239;? Demandez et je vous montre des exemples.',
     close_h: 'Prêt quand vous l’êtes.',
     close_p: 'Envoyez un lien ou quelques lignes, en français ou en anglais. Vous aurez un prix fixe et une date de livraison avant le moindre début de travail.',
     close_cta: 'Commencer sur Fiverr',
@@ -386,6 +451,8 @@ function applyLang(){
 function applyTheme(){
   document.documentElement.setAttribute('data-theme', theme);
   document.getElementById('themeBtn').textContent = theme === 'dark' ? '☀' : '☾';
+  var tc = document.getElementById('tcMeta');
+  if (tc) tc.setAttribute('content', theme === 'dark' ? '#0E1726' : '#F2F7FC');
 }
 document.getElementById('langBtn').addEventListener('click', () => {
   lang = lang === 'fr' ? 'en' : 'fr'; lsSet('pb_lang', lang); applyLang();
