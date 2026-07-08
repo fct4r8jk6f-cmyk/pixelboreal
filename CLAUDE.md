@@ -32,7 +32,11 @@ reveal his name, face, or personal details. "pixelboreal" is always lowercase.
 
 ## Wider context (for cloud sessions with no local memory)
 The business's canonical docs live on Nicholas's machine at
-`C:\Users\nicho\Documents\pixelboreal\` (not in this repo). Gig prices as of
+`C:\Users\nicho\Documents\pixelboreal\` (not in this repo). That parent folder is
+also the dedicated LOCAL Claude Code project for pixelboreal (own CLAUDE.md +
+memory); this repo checkout lives inside it at `site\`. Cloud sessions here handle
+website edits only — Fiverr/business ops and browser automation happen in local
+sessions from that parent folder. Gig prices as of
 2026-07: bug fixes $60/130/280 · bilingual sites $150/420/850 · fr-CA
 localization $120/260/520. If copy references prices, keep the "from $X" values
 in sync with the `c1_tag`/`c2_tag`/`c3_tag` i18n keys (both languages).
