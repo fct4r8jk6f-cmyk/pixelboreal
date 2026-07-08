@@ -29,6 +29,24 @@ reveal his name, face, or personal details. "pixelboreal" is always lowercase.
 - Gig 2 (bilingual sites): /awouleh/build-a-fast-bilingual-website-in-english-and-french
 - Gig 3 (fr-CA localization): /awouleh/localize-your-website-into-real-quebec-french-fr-ca
 - Featured work (Perch demo): https://fct4r8jk6f-cmyk.github.io/perchapp/
+- Featured work (What-If Binder, EN): https://fct4r8jk6f-cmyk.github.io/what-if-binder/
+- Featured work (What-If Binder, FR): https://fct4r8jk6f-cmyk.github.io/what-if-binder/le-classeur-au-cas-ou.html
+
+## Related projects (ask to add via add_repo when a session needs them)
+Sessions here regularly reference these sibling repos; pull them in when a task
+touches them instead of guessing at their contents:
+- **`fct4r8jk6f-cmyk/what-if-binder`** (public): the deployed GitHub Pages copy
+  of **The What-If Binder / Le Classeur Au Cas Où**, a bilingual (EN + fr-CA)
+  family-emergency binder app. One self-contained HTML file per language,
+  local-first (answers stay in the browser, no accounts), backup/restore and
+  print built in, 15 guided sections per edition. Featured on this site as the
+  second work sample — keep the site's claims in sync with the deployed app.
+- **`fct4r8jk6f-cmyk/whatif`** (private): the binder's product workshop — app
+  sources, printable PDF deliverables, listing copy and docs. The public deploy
+  above is generated from here. Product/business ops for it happen in local
+  sessions, not cloud ones.
+- **`fct4r8jk6f-cmyk/perchapp`** (public): Perch, the social-app demo that is
+  the first work sample.
 
 ## Wider context (for cloud sessions with no local memory)
 The business's canonical docs live on Nicholas's machine at

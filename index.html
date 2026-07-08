@@ -148,6 +148,13 @@ h2{font-size:1.65rem;margin-bottom:8px}
 .mock .bar.b5{width:40%;background:var(--cyan)}
 .mock .dot-row{display:flex;gap:6px;margin:12px 6px 4px}
 .mock .dot-row i{width:22px;height:22px;border-radius:6px;background:var(--panel);border:2px solid var(--line)}
+#work .feature + .feature{margin-top:20px}
+.mock.paper{background:#FAF6EE;border-color:#D9D2C3}
+.mock.paper .bar{background:#D9D2C3}
+.mock.paper .bar.b1{background:#1F5F5B}
+.mock.paper .bar.b3{background:#B07A2A}
+.mock.paper .bar.b5{background:#1F5F5B}
+.mock.paper .dot-row i{background:#FFFFFF;border-color:#D9D2C3}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:step}
 .step{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:24px}
 .step::before{
@@ -258,7 +265,7 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="work">
   <h2 data-i18n="w_h">Featured work</h2>
-  <p class="sub" data-i18n="w_sub">A real product with real code. I built the whole thing myself.</p>
+  <p class="sub" data-i18n="w_sub">Real products with real code. I built both myself.</p>
   <div class="feature">
     <div>
       <h3>Perch</h3>
@@ -272,6 +279,25 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p style="margin-top:18px"><a class="cta" href="https://fct4r8jk6f-cmyk.github.io/perchapp/" target="_blank" rel="noopener noreferrer" data-i18n="w_go">Open the live demo</a></p>
     </div>
     <div class="mock" aria-hidden="true">
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+      <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
+      <div class="bar b4"></div><div class="bar b5"></div>
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+  <div class="feature">
+    <div>
+      <h3 data-i18n="w2_h">The What-If Binder</h3>
+      <p class="sub" style="margin-bottom:0" data-i18n="w2_p">An emergency binder for families: if something happened to you tonight, could yours find what they need? Fifteen guided sections, from key people to final wishes, that print to a clean PDF.</p>
+      <ul>
+        <li data-i18n="w2_l1">15 guided sections per language, English and Québec French</li>
+        <li data-i18n="w2_l2">Private by design: answers never leave your device, no account</li>
+        <li data-i18n="w2_l3">Backup, restore and print to PDF built in</li>
+        <li data-i18n="w2_l4">One self-contained HTML file per edition, no dependencies</li>
+      </ul>
+      <p style="margin-top:18px"><a class="cta" id="binderGo" href="https://fct4r8jk6f-cmyk.github.io/what-if-binder/" target="_blank" rel="noopener noreferrer" data-i18n="w_go">Open the live demo</a></p>
+    </div>
+    <div class="mock paper" aria-hidden="true">
       <div class="dot-row"><i></i><i></i><i></i><i></i></div>
       <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
       <div class="bar b4"></div><div class="bar b5"></div>
@@ -358,13 +384,19 @@ const I18N = {
     c3_tag: 'from $120 · 3 days', c3_h: 'fr-CA localization',
     c3_p: 'Plain “French” isn’t enough for Quebec. I translate your site into natural Québécois French, including the buttons, error messages and SEO text most translators never touch.',
     c_go: 'View on Fiverr <span aria-hidden="true">→</span>',
-    w_h: 'Featured work', w_sub: 'A real product with real code. I built the whole thing myself.',
+    w_h: 'Featured work', w_sub: 'Real products with real code. I built both myself.',
     w_p: 'A social app demo I built to show range. It packs 29 screens into one page with no dependencies, works fully in English and Québec French, and has dark and light themes, real accessibility settings and a PostgreSQL backend.',
     w_l1: '29 screens, one HTML file, no build step',
     w_l2: 'Full English + Québec French coverage, legal pages included',
     w_l3: 'Functional accessibility: text size, contrast, reduced motion',
     w_l4: 'Supabase / PostgreSQL backend with realtime chat',
     w_go: 'Open the live demo',
+    w2_h: 'The What-If Binder',
+    w2_p: 'An emergency binder for families: if something happened to you tonight, could yours find what they need? Fifteen guided sections, from key people to final wishes, that print to a clean PDF.',
+    w2_l1: '15 guided sections per language, English and Québec French',
+    w2_l2: 'Private by design: answers never leave your device, no account',
+    w2_l3: 'Backup, restore and print to PDF built in',
+    w2_l4: 'One self-contained HTML file per edition, no dependencies',
     p_h: 'How it works', p_sub: 'Async and fixed-price from the first message to the last file.',
     p1_h: 'Tell me what you need', p1_p: 'Send your URL or your idea in a couple of lines, in English or French. Rough notes are fine, and I can write the copy for you.',
     p2_h: 'Get a fixed quote', p2_p: 'You get an exact price and delivery date in writing before any work starts. Anything outside that scope is a separate quote, so the cost never surprises you.',
@@ -400,13 +432,19 @@ const I18N = {
     c3_tag: 'dès 120&#8239;$ · 3 jours', c3_h: 'Localisation fr-CA',
     c3_p: 'Le «&#8239;français de France&#8239;», ça se remarque tout de suite. Je traduis votre site en français québécois naturel, boutons, messages d’erreur et textes de référencement compris.',
     c_go: 'Voir sur Fiverr <span aria-hidden="true">→</span>',
-    w_h: 'Réalisation vedette', w_sub: 'Un vrai produit, du vrai code. Je l’ai conçu au complet moi-même.',
+    w_h: 'Réalisations vedettes', w_sub: 'De vrais produits, du vrai code. Je les ai bâtis au complet moi-même.',
     w_p: 'Une démo d’application sociale que j’ai bâtie pour montrer l’étendue du travail. Elle réunit 29 écrans dans une seule page sans dépendances, fonctionne en français québécois et en anglais, et offre des thèmes sombre et clair, de vrais réglages d’accessibilité et un backend PostgreSQL.',
     w_l1: '29 écrans, un seul fichier HTML, sans étape de build',
     w_l2: 'Couverture complète français québécois + anglais, pages légales incluses',
     w_l3: 'Accessibilité fonctionnelle&#8239;: taille du texte, contraste, mouvement réduit',
     w_l4: 'Backend Supabase / PostgreSQL avec clavardage en temps réel',
     w_go: 'Ouvrir la démo',
+    w2_h: 'Le Classeur Au Cas Où',
+    w2_p: 'Un classeur d’urgence pour les familles&#8239;: s’il vous arrivait quelque chose ce soir, la vôtre saurait-elle où chercher&#8239;? Quinze sections guidées, des personnes clés aux dernières volontés, qui s’impriment en un PDF propre.',
+    w2_l1: '15 sections guidées par langue, en français québécois et en anglais',
+    w2_l2: 'Vie privée d’abord&#8239;: vos réponses ne quittent jamais votre appareil, aucun compte',
+    w2_l3: 'Sauvegarde, restauration et impression PDF intégrées',
+    w2_l4: 'Un seul fichier HTML autonome par édition, sans dépendances',
     p_h: 'Comment ça marche', p_sub: 'Asynchrone et à prix fixe, du premier message au dernier fichier.',
     p1_h: 'Dites-moi ce qu’il vous faut', p1_p: 'Envoyez votre adresse web ou votre idée en quelques lignes, en français ou en anglais. Des notes en vrac suffisent, et je peux rédiger les textes pour vous.',
     p2_h: 'Recevez une soumission fixe', p2_p: 'Vous avez un prix exact et une date de livraison par écrit avant de commencer. Tout ce qui dépasse le mandat fait l’objet d’une soumission séparée, donc le coût ne vous surprend jamais.',
@@ -442,6 +480,10 @@ function applyLang(){
     const k = el.getAttribute('data-i18n');
     if (I18N[lang][k] !== undefined) el.innerHTML = I18N[lang][k];
   });
+  const bg = document.getElementById('binderGo');
+  if (bg) bg.href = lang === 'fr'
+    ? 'https://fct4r8jk6f-cmyk.github.io/what-if-binder/le-classeur-au-cas-ou.html'
+    : 'https://fct4r8jk6f-cmyk.github.io/what-if-binder/';
   const b = document.getElementById('langBtn');
   b.textContent = lang === 'fr' ? 'EN' : 'FR';
   b.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer au français');
