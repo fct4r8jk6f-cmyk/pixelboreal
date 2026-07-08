@@ -5,9 +5,10 @@ https://fct4r8jk6f-cmyk.github.io/pixelboreal/ — every push to main redeploys
 automatically (allow ~1 minute).
 
 ## What this site is
-The public face of **pixelboreal**, a faceless bilingual web studio in Montréal
-run by Nicholas. It exists to make the three Fiverr gigs credible and must never
-reveal his name, face, or personal details. "pixelboreal" is always lowercase.
+The public face of **pixelboreal**, a faceless bilingual web studio in Montréal.
+It exists to make the three Fiverr gigs credible and must never reveal the
+owner's name, face, or personal details — that rule applies to this repo's
+files too, since the repo is public. "pixelboreal" is always lowercase.
 
 ## Hard rules
 - **Single file, no build step.** Everything (CSS/JS/SVG logo) stays inline in
@@ -49,8 +50,8 @@ touches them instead of guessing at their contents:
   the first work sample.
 
 ## Wider context (for cloud sessions with no local memory)
-The business's canonical docs live on Nicholas's machine at
-`C:\Users\nicho\Documents\pixelboreal\` (not in this repo). That parent folder is
+The business's canonical docs live on the owner's machine in a dedicated local
+pixelboreal folder (not in this repo). That parent folder is
 also the dedicated LOCAL Claude Code project for pixelboreal (own CLAUDE.md +
 memory); this repo checkout lives inside it at `site\`. Cloud sessions here handle
 website edits only — Fiverr/business ops and browser automation happen in local
