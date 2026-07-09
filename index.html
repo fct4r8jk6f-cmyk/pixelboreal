@@ -336,6 +336,25 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="dot-row"><i></i><i></i><i></i><i></i></div>
     </div>
   </div>
+  <div class="feature">
+    <div>
+      <h3 data-i18n="w3_h">This site itself</h3>
+      <p class="sub" style="margin-bottom:0" data-i18n="w3_p">The page you’re reading is the build I sell: one hand-coded file, fully English and Québec French, dark and light, loading instantly with zero third-party requests. A live demo of the bilingual-website service.</p>
+      <ul>
+        <li data-i18n="w3_l1">One hand-coded HTML file, no build step, no framework</li>
+        <li data-i18n="w3_l2">Full English + Québec French, dark and light themes</li>
+        <li data-i18n="w3_l3">Accessible: skip link, visible focus, reduced motion</li>
+        <li data-i18n="w3_l4">SEO done right: Open Graph, JSON-LD and an inline SVG logo</li>
+      </ul>
+      <p style="margin-top:18px"><a class="cta" href="https://github.com/fct4r8jk6f-cmyk/pixelboreal" target="_blank" rel="noopener noreferrer" data-i18n="w3_go">See the code</a></p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+      <div class="bar b2"></div><div class="bar b1"></div><div class="bar b4"></div>
+      <div class="bar b3"></div><div class="bar b5"></div>
+      <div class="dot-row"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
 </section>
 
 <section id="how">
@@ -422,7 +441,7 @@ const I18N = {
     d_enc2: '— that’s a charset fix in the code, not a rewrite.',
     d_note: 'Both are real French. The difference is which one your Québec customers recognize as written for them.',
     d_cta: 'Get real Québec French for your site',
-    w_h: 'Featured work', w_sub: 'Real products with real code. I built both myself.',
+    w_h: 'Featured work', w_sub: 'Real products with real code — each one built by hand.',
     w_p: 'A social app demo I built to show range. It packs 29 screens into one page with no dependencies, works fully in English and Québec French, and has dark and light themes, real accessibility settings and a PostgreSQL backend.',
     w_l1: '29 screens, one HTML file, no build step',
     w_l2: 'Full English + Québec French coverage, legal pages included',
@@ -435,6 +454,13 @@ const I18N = {
     w2_l2: 'Private by design: answers never leave your device, no account',
     w2_l3: 'Backup, restore and print to PDF built in',
     w2_l4: 'One self-contained HTML file per edition, no dependencies',
+    w3_h: 'This site itself',
+    w3_p: 'The page you’re reading is the build I sell: one hand-coded file, fully English and Québec French, dark and light, loading instantly with zero third-party requests. A live demo of the bilingual-website service.',
+    w3_l1: 'One hand-coded HTML file, no build step, no framework',
+    w3_l2: 'Full English + Québec French, dark and light themes',
+    w3_l3: 'Accessible: skip link, visible focus, reduced motion',
+    w3_l4: 'SEO done right: Open Graph, JSON-LD and an inline SVG logo',
+    w3_go: 'See the code',
     p_h: 'How it works', p_sub: 'Async and fixed-price from the first message to the last file.',
     p1_h: 'Tell me what you need', p1_p: 'Send your URL or your idea in a couple of lines, in English or French. Rough notes are fine, and I can write the copy for you.',
     p2_h: 'Get a fixed quote', p2_p: 'You get an exact price and delivery date in writing before any work starts. Anything outside that scope is a separate quote, so the cost never surprises you.',
@@ -476,7 +502,7 @@ const I18N = {
     d_enc2: '— c’est une correction d’encodage dans le code, pas une réécriture.',
     d_note: 'Les deux sont du vrai français. La différence, c’est celui que vos clients québécois reconnaissent comme écrit pour eux.',
     d_cta: 'Du vrai français québécois pour votre site',
-    w_h: 'Réalisations vedettes', w_sub: 'De vrais produits, du vrai code. Je les ai bâtis au complet moi-même.',
+    w_h: 'Réalisations vedettes', w_sub: 'De vrais produits, du vrai code, bâtis à la main.',
     w_p: 'Une démo d’application sociale que j’ai bâtie pour montrer l’étendue du travail. Elle réunit 29 écrans dans une seule page sans dépendances, fonctionne en français québécois et en anglais, et offre des thèmes sombre et clair, de vrais réglages d’accessibilité et un backend PostgreSQL.',
     w_l1: '29 écrans, un seul fichier HTML, sans étape de build',
     w_l2: 'Couverture complète français québécois + anglais, pages légales incluses',
@@ -489,6 +515,13 @@ const I18N = {
     w2_l2: 'Vie privée d’abord&#8239;: vos réponses ne quittent jamais votre appareil, aucun compte',
     w2_l3: 'Sauvegarde, restauration et impression PDF intégrées',
     w2_l4: 'Un seul fichier HTML autonome par édition, sans dépendances',
+    w3_h: 'Ce site même',
+    w3_p: 'La page que vous lisez est le genre de site que je vends&#8239;: un seul fichier codé à la main, entièrement en français québécois et en anglais, en thème sombre et clair, qui charge instantanément sans aucune requête externe. Une démo en direct du service de site bilingue.',
+    w3_l1: 'Un seul fichier HTML codé à la main, sans étape de build ni cadriciel',
+    w3_l2: 'Français québécois + anglais au complet, thèmes sombre et clair',
+    w3_l3: 'Accessible&#8239;: lien d’évitement, focus visible, mouvement réduit',
+    w3_l4: 'Référencement soigné&#8239;: Open Graph, JSON-LD et logo SVG intégré',
+    w3_go: 'Voir le code',
     p_h: 'Comment ça marche', p_sub: 'Asynchrone et à prix fixe, du premier message au dernier fichier.',
     p1_h: 'Dites-moi ce qu’il vous faut', p1_p: 'Envoyez votre adresse web ou votre idée en quelques lignes, en français ou en anglais. Des notes en vrac suffisent, et je peux rédiger les textes pour vous.',
     p2_h: 'Recevez une soumission fixe', p2_p: 'Vous avez un prix exact et une date de livraison par écrit avant de commencer. Tout ce qui dépasse le mandat fait l’objet d’une soumission séparée, donc le coût ne vous surprend jamais.',
