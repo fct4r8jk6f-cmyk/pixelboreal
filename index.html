@@ -187,6 +187,16 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .faq details[open] summary::after{content:"−"}
 .faq summary:focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:8px}
 .faq details p{padding:0 22px 20px;color:var(--soft);font-size:.98rem;max-width:70ch}
+.diff{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.pair{background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 16px var(--shadow)}
+.pair .bad{color:var(--soft)}
+.pair .arw{color:var(--soft);font-weight:700;flex:none}
+.pair .good{color:var(--mint);font-weight:700}
+.encbar{margin-top:16px;background:var(--panel);border:2px dashed var(--line);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--soft);font-size:.97rem}
+.encbar code{font-family:Consolas,ui-monospace,monospace}
+.encbar .egood{color:var(--mint);font-weight:700}
+.encbar .arw{color:var(--soft);font-weight:700}
+.dnote{margin-top:18px;color:var(--soft);font-size:.95rem;max-width:70ch}
 @media (max-width:760px){ .feature{grid-template-columns:1fr} .cta.ghost{margin-left:0;margin-top:10px} }
 @media (max-width:400px){ .wrap{padding:0 16px} }
 </style>
@@ -261,6 +271,27 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a class="go" href="https://www.fiverr.com/awouleh/localize-your-website-into-real-quebec-french-fr-ca" target="_blank" rel="noopener noreferrer" data-i18n="c_go">View on Fiverr <span aria-hidden="true">→</span></a>
     </div>
   </div>
+</section>
+
+<section id="frca">
+  <h2 data-i18n="d_h">France French, or real Québec French?</h2>
+  <p class="sub" data-i18n="d_sub">On the left, what machine translation and France-based writers tend to ship. On the right, what people here actually say — the word your Québec visitors read as one of their own.</p>
+  <div class="diff">
+    <div class="pair"><span class="bad">e-mail</span> <span class="arw" aria-hidden="true">→</span> <span class="good">courriel</span></div>
+    <div class="pair"><span class="bad">newsletter</span> <span class="arw" aria-hidden="true">→</span> <span class="good">infolettre</span></div>
+    <div class="pair"><span class="bad">week-end</span> <span class="arw" aria-hidden="true">→</span> <span class="good">fin de semaine</span></div>
+    <div class="pair"><span class="bad">shopping</span> <span class="arw" aria-hidden="true">→</span> <span class="good">magasiner</span></div>
+    <div class="pair"><span class="bad">chatter</span> <span class="arw" aria-hidden="true">→</span> <span class="good">clavarder</span></div>
+    <div class="pair"><span class="bad">uploader</span> <span class="arw" aria-hidden="true">→</span> <span class="good">téléverser</span></div>
+    <div class="pair"><span class="bad">spam</span> <span class="arw" aria-hidden="true">→</span> <span class="good">pourriel</span></div>
+    <div class="pair"><span class="bad">podcast</span> <span class="arw" aria-hidden="true">→</span> <span class="good">balado</span></div>
+  </div>
+  <div class="encbar">
+    <span data-i18n="d_enc1">And even the accents:</span>
+    <code class="bad">Fran&#195;&#167;ais</code> <span class="arw" aria-hidden="true">→</span> <code class="egood">Français</code>
+    <span data-i18n="d_enc2">— that’s a charset fix in the code, not a rewrite.</span>
+  </div>
+  <p class="dnote" data-i18n="d_note">Both are real French. The difference is which one your Québec customers recognize as written for them.</p>
 </section>
 
 <section id="work">
@@ -384,6 +415,11 @@ const I18N = {
     c3_tag: 'from $120 · 3 days', c3_h: 'fr-CA localization',
     c3_p: 'Plain “French” isn’t enough for Quebec. I translate your site into natural Québécois French, including the buttons, error messages and SEO text most translators never touch.',
     c_go: 'View on Fiverr <span aria-hidden="true">→</span>',
+    d_h: 'France French, or real Québec French?',
+    d_sub: 'On the left, what machine translation and France-based writers tend to ship. On the right, what people here actually say — the word your Québec visitors read as one of their own.',
+    d_enc1: 'And even the accents:',
+    d_enc2: '— that’s a charset fix in the code, not a rewrite.',
+    d_note: 'Both are real French. The difference is which one your Québec customers recognize as written for them.',
     w_h: 'Featured work', w_sub: 'Real products with real code. I built both myself.',
     w_p: 'A social app demo I built to show range. It packs 29 screens into one page with no dependencies, works fully in English and Québec French, and has dark and light themes, real accessibility settings and a PostgreSQL backend.',
     w_l1: '29 screens, one HTML file, no build step',
@@ -432,6 +468,11 @@ const I18N = {
     c3_tag: 'dès 120&#8239;$ · 3 jours', c3_h: 'Localisation fr-CA',
     c3_p: 'Le «&#8239;français de France&#8239;», ça se remarque tout de suite. Je traduis votre site en français québécois naturel, boutons, messages d’erreur et textes de référencement compris.',
     c_go: 'Voir sur Fiverr <span aria-hidden="true">→</span>',
+    d_h: 'Français de France ou vrai français québécois&#8239;?',
+    d_sub: 'À gauche, ce que la traduction automatique et les rédacteurs de France ont tendance à livrer. À droite, ce que le monde d’ici dit vraiment — le mot que vos visiteurs québécois lisent comme un des leurs.',
+    d_enc1: 'Et même les accents&#8239;:',
+    d_enc2: '— c’est une correction d’encodage dans le code, pas une réécriture.',
+    d_note: 'Les deux sont du vrai français. La différence, c’est celui que vos clients québécois reconnaissent comme écrit pour eux.',
     w_h: 'Réalisations vedettes', w_sub: 'De vrais produits, du vrai code. Je les ai bâtis au complet moi-même.',
     w_p: 'Une démo d’application sociale que j’ai bâtie pour montrer l’étendue du travail. Elle réunit 29 écrans dans une seule page sans dépendances, fonctionne en français québécois et en anglais, et offre des thèmes sombre et clair, de vrais réglages d’accessibilité et un backend PostgreSQL.',
     w_l1: '29 écrans, un seul fichier HTML, sans étape de build',
