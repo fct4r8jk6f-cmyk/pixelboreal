@@ -24,6 +24,19 @@ files too, since the repo is public. "pixelboreal" is always lowercase.
   theme overrides live in the same `:root`/`[data-theme="light"]` blocks.
 - Respect `prefers-reduced-motion`; keep focus states visible.
 
+## Current focus (from 2026-09-28)
+The site is not the bottleneck; distribution is. Nobody finds it on their own,
+so it now serves as the landing page for direct outreach (plan: `docs/TURNAROUND.md`
+in the private `whatif` repo). Keep edits small and tied to that. The next
+expected one is adding the studio's contact email once the owner creates it.
+Don't start new sections, samples or redesigns until there's a paying client.
+- The fr-CA section's "It's also the law" callout (`d_law_*` keys) summarizes
+  Québec's Charter of the French Language (Art. 52: business websites in French,
+  on terms at least as favourable; Law 14's private right of action). Keep the
+  "not legal advice" line, and re-check the wording if the law changes.
+- Promises on the page must match how the work is actually done (e.g. the FAQ's
+  "never a machine pass"). Flag, don't silently keep, any claim that isn't true.
+
 ## Links that must stay correct
 - Fiverr profile: https://www.fiverr.com/awouleh
 - Gig 1 (bug fixes): /awouleh/fix-bugs-on-your-website-fast-at-a-flat-price
