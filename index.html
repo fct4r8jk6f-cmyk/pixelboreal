@@ -197,6 +197,10 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .encbar .egood{color:var(--mint);font-weight:700}
 .encbar .arw{color:var(--soft);font-weight:700}
 .dnote{margin-top:18px;color:var(--soft);font-size:.95rem;max-width:70ch}
+.law{margin-top:22px;background:var(--panel);border:2px solid var(--line);border-left:6px solid var(--mint);border-radius:12px;padding:18px 22px;max-width:75ch;box-shadow:0 4px 16px var(--shadow)}
+.law h3{font-size:1.1rem;margin-bottom:6px}
+.law p{color:var(--soft);font-size:.97rem}
+.law .lnote{margin-top:8px;font-size:.85rem}
 @media (max-width:760px){ .feature{grid-template-columns:1fr} .cta.ghost{margin-left:0;margin-top:10px} }
 @media (max-width:400px){ .wrap{padding:0 16px} }
 </style>
@@ -292,12 +296,17 @@ footer .frow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <span data-i18n="d_enc2">— that’s a charset fix in the code, not a rewrite.</span>
   </div>
   <p class="dnote" data-i18n="d_note">Both are real French. The difference is which one your Québec customers recognize as written for them.</p>
+  <div class="law">
+    <h3 data-i18n="d_law_h">Selling in Québec? It’s also the law.</h3>
+    <p data-i18n="d_law_p">Québec’s Charter of the French Language requires a business’s website to be available in French — just as complete and as easy to find as the English. Since Law 14, customers can take it to court, not only complain to the OQLF.</p>
+    <p class="lnote" data-i18n="d_law_note">General information, not legal advice.</p>
+  </div>
   <p style="margin-top:22px"><a class="cta" href="https://www.fiverr.com/awouleh/localize-your-website-into-real-quebec-french-fr-ca" target="_blank" rel="noopener noreferrer" data-i18n="d_cta">Get real Québec French for your site</a></p>
 </section>
 
 <section id="work">
   <h2 data-i18n="w_h">Featured work</h2>
-  <p class="sub" data-i18n="w_sub">Real products with real code. I built both myself.</p>
+  <p class="sub" data-i18n="w_sub">Real products with real code — each one built by hand.</p>
   <div class="feature">
     <div>
       <h3>Perch</h3>
@@ -440,6 +449,9 @@ const I18N = {
     d_enc1: 'And even the accents:',
     d_enc2: '— that’s a charset fix in the code, not a rewrite.',
     d_note: 'Both are real French. The difference is which one your Québec customers recognize as written for them.',
+    d_law_h: 'Selling in Québec? It’s also the law.',
+    d_law_p: 'Québec’s Charter of the French Language requires a business’s website to be available in French — just as complete and as easy to find as the English. Since Law 14, customers can take it to court, not only complain to the OQLF.',
+    d_law_note: 'General information, not legal advice.',
     d_cta: 'Get real Québec French for your site',
     w_h: 'Featured work', w_sub: 'Real products with real code — each one built by hand.',
     w_p: 'A social app demo I built to show range. It packs 29 screens into one page with no dependencies, works fully in English and Québec French, and has dark and light themes, real accessibility settings and a PostgreSQL backend.',
@@ -501,6 +513,9 @@ const I18N = {
     d_enc1: 'Et même les accents&#8239;:',
     d_enc2: '— c’est une correction d’encodage dans le code, pas une réécriture.',
     d_note: 'Les deux sont du vrai français. La différence, c’est celui que vos clients québécois reconnaissent comme écrit pour eux.',
+    d_law_h: 'Vous faites affaire au Québec&#8239;? C’est aussi la loi.',
+    d_law_p: 'La Charte de la langue française exige que le site web d’une entreprise soit offert en français — aussi complet et aussi facile à trouver que la version anglaise. Depuis la Loi&#8239;14, les clients peuvent s’adresser aux tribunaux, et pas seulement porter plainte à l’OQLF.',
+    d_law_note: 'Information générale, pas un avis juridique.',
     d_cta: 'Du vrai français québécois pour votre site',
     w_h: 'Réalisations vedettes', w_sub: 'De vrais produits, du vrai code, bâtis à la main.',
     w_p: 'Une démo d’application sociale que j’ai bâtie pour montrer l’étendue du travail. Elle réunit 29 écrans dans une seule page sans dépendances, fonctionne en français québécois et en anglais, et offre des thèmes sombre et clair, de vrais réglages d’accessibilité et un backend PostgreSQL.',
