@@ -34,8 +34,11 @@ Don't start new sections, samples or redesigns until there's a paying client.
   Québec's Charter of the French Language (Art. 52: business websites in French,
   on terms at least as favourable; Law 14's private right of action). Keep the
   "not legal advice" line, and re-check the wording if the law changes.
-- Promises on the page must match how the work is actually done (e.g. the FAQ's
-  "never a machine pass"). Flag, don't silently keep, any claim that isn't true.
+- Promises on the page must match how the work is actually done. Flag, don't
+  silently keep, any claim that isn't true. Since 2026-11-06 the copy says
+  "custom-coded" (not "hand-built" / "coded by hand" / "hand-written"), and the
+  French FAQ answer says AI tools help with the first draft and every line is
+  then reviewed and rewritten. Keep it that way, in both languages.
 
 ## Links that must stay correct
 - Fiverr profile: https://www.fiverr.com/awouleh
